@@ -3,24 +3,24 @@ const sendBtn   = document.getElementById('sendBtn');
 const permEl    = document.getElementById('perm');
 
 function updateUI() {
-  // Notification.permission is "default" | "granted" | "denied"
+  
   permEl.textContent = Notification.permission;
   sendBtn.disabled = (Notification.permission !== 'granted');
 }
 
-// call once when page loads
+
 updateUI();
 enableBtn.addEventListener('click', async () => {
   try {
     const permission = await Notification.requestPermission(); // knock & wait
-    updateUI(); // refresh label + button state
+    updateUI(); 
 
     if (permission === 'granted') {
       alert('Notifications enabled 🎉');
     } else if (permission === 'denied') {
       alert('You denied notifications. You can change it in browser settings.');
     } else {
-      // "default" = closed prompt without choosing
+     
       alert('You closed the prompt. Click again if you want to allow.');
     }
   } catch (err) {
@@ -37,7 +37,7 @@ sendBtn.addEventListener('click', () => {
   const notif = new Notification('👋 Hey there!', {
     body: 'Hello!',
     tag: 'hello-notif'
-    // icon: 'icon.png' // optional later
+    
   });
 
   notif.onclick = () => {
@@ -45,6 +45,6 @@ sendBtn.addEventListener('click', () => {
     notif.close();
   };
 
-  setTimeout(() => notif.close(), 5000); // auto-close after 5s
+  setTimeout(() => notif.close(), 5000); 
 });
 
