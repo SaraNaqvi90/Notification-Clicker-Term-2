@@ -12,7 +12,7 @@ I built this to get more comfortable with linking HTML and JS, updating elements
 - Keeps the interface simple and easy to understand.
 
 ## Why I made it
-Just to practice!  
+
 I wanted a small, manageable project where I could try improving the UI and also play around with JavaScript functions and DOM manipulation.
 
 ## Files in this project
